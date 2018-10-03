@@ -1,28 +1,29 @@
 class StaticPagesController < ApplicationController
   def hello
-    render html: ">hello, world!"
+    render "hello"
   end
 
 
 
   def home
-  render html: "This is the home page."
+  render  "home"
   end
 
 
   def goodbye
-  render html: "Goodbye!"
+  render "goodbye"
   end 
 
 
   def name
-  render html: "My name is Tyler."
+  render "name"
   end
 
   def roll_die
-    number =[1,2,3,4,5,6].sample
-    render html: "Your number is #{number}."
- 
+    @number = [1,2,3,4,5,6].sample
+    # @ creates instance variables so that the variable can be accessed outside of the class.
+
+    render "roll_die"
   end
  end
 
